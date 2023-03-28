@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'CSS/Results.css' %}" />
+    <title>Web Scraper - Results</title>
+  </head>
+  <body>
+    <header>
+      <h1>Web Scraper Online</h1>
+    </header>
+    <main>
+      <section class="container">
+        <h2>Results for "{{ topic }}" on {{ web }}</h2>
+        <ul>
+          {% for post in res %}
+          <li>{{ post }}</li>
+          {% endfor %}
+        </ul>
+        <a href="{% url 'Scraper:HomePage' %}" class="back-button"
+          >Back to Search</a
+        >
+      </section>
+    </main>
+  </body>
+</html>

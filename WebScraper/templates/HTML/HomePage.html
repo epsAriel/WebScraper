@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'CSS/HomePage.css' %}" />
+    <title>Web Scraper - HomePage</title>
+  </head>
+  <body>
+    <header>
+      <h1>Web Scraper Online</h1>
+    </header>
+    <main>
+      <section class="container">
+        <h2>Search:</h2>
+        <form action="{% url 'Scraper:SearchResults' %}" method="POST">
+          {% csrf_token %}
+          <label for="topic">Topic:</label>
+          <input
+            type="search"
+            id="topic"
+            name="Topic"
+            placeholder="Enter topic"
+          />
+          <br /><br />
+          <label for="posts-number">Number of posts:</label>
+          <input type="number" id="posts-number" name="posts_number" min="1" />
+          <br /><br />
+          <label for="web-choose">Choose web:</label>
+          <select id="web-choose" name="WebChoose">
+            <option value="">Choose web</option>
+            <option value="twitter">Twitter</option>
+            <option value="reddit">Reddit</option>
+          </select>
+          <br /><br />
+          <button>Submit</button>
+        </form>
+        <a href="{% url 'Scraper:Archive' %}" class="back-button"
+          >My recent search</a
+        >
+      </section>
+    </main>
+  </body>
+</html>
