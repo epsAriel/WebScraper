@@ -43,6 +43,9 @@ These packages can be installed by running the following command:
 
 9. To export the data to a CSV file, click the "Download CSV" link.
 
+## Usage video
+![Alt text](Video.gif)
+
 ## Credits
 This application uses the following packages:
 
